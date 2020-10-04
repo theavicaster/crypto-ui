@@ -13,11 +13,11 @@ const WarningAlert = () => {
       <Snackbar
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         open={open}
-        autoHideDuration={10000}
+        autoHideDuration={15000}
         onClose={() => setOpen(false)}
       >
         <Alert onClose={() => setOpen(false)} severity="warning">
-          Cryptocurrency data is static. Please follow GitHub repository for
+          Numeric data displayed is static. Please follow GitHub repository to set up server-side API for
           dynamic updates.
         </Alert>
       </Snackbar>
