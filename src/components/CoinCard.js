@@ -19,7 +19,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import CardContentData from './CardContentData';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
