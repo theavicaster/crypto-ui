@@ -247,9 +247,9 @@ const CoinCard = ({
     }
 
     return html
-      .replaceAll('<h1>', `<h1 style="color:${color}">`)
-      .replaceAll('<h2>', `<h2 style="color:${color}">`)
-      .replaceAll('<h3>', `<h3 style="color:${color}">`);
+      .replaceAll('<h1>', `<h1 style="color:${color};font-family:'Raleway'">`)
+      .replaceAll('<h2>', `<h2 style="color:${color};font-family:'Raleway'">`)
+      .replaceAll('<h3>', `<h3 style="color:${color};font-family:'Raleway'">`);
   };
 
   return (

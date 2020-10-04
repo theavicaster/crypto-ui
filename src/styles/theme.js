@@ -18,6 +18,9 @@ const theme = createMuiTheme({
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
+    h4 : {
+      fontFamily: '"Raleway"'
+    }
   },
 });
 

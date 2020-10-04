@@ -108,6 +108,7 @@ const CoinChart = (props) => {
           text: 'Real-Time Dashboard',
           fontFamily: 'Raleway',
           fontSize: 45,
+          fontStyle: 'normal',
           fontColor: '#f2a365',
         },
         tooltips: {
