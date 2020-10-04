@@ -6,6 +6,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Chart from 'chart.js';
 import CoinCard from './CoinCard';
+import latestAggregateResponse from '../responses/latestAggregate';
+import latestPriceResponse from '../responses/latestPrice';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -189,19 +191,9 @@ const CoinChart = (props) => {
       //   });
       // };
       const getPrice = () => {
-        const data = {
-          symbol_coin: symbol,
-          timestamp: '2020-10-04T11:07:08.000Z',
-          id: '1',
-          market_cap: '196073474906',
-          name_coin: symbol,
-          number_of_markets: '19532',
-          percent_change_24hr: '0.4',
-          price: '10594.2105589563',
-          total_supply: '18507606',
-          uuid: 'Qwsogvtv82FCd',
-          volume: '10759363315',
-        };
+        const data = latestPriceResponse.find(
+          (coinData) => coinData.symbol_coin === symbol
+        );
 
         setCoinPrice({
           price: data.price,
@@ -225,14 +217,9 @@ const CoinChart = (props) => {
       //   });
       // };
       const getAggregate = () => {
-        const data = {
-          symbol_coin: symbol,
-          end_time: '2020-10-04T11:08:30.000Z',
-          arithmetic_mean: '10591.828064047457',
-          geometric_mean: '10591.827894173983',
-          harmonic_mean: '10591.827724306246',
-          start_time: '2020-10-04T11:03:30.000Z',
-        };
+        const data = latestAggregateResponse.find(
+          (coinData) => coinData.symbol_coin === symbol
+        );
 
         setCoinAggregate({
           arithmeticMean: data.arithmetic_mean,
