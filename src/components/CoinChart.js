@@ -246,7 +246,7 @@ const CoinChart = (props) => {
 
         coinChart.update();
       }
-    }, 3000);
+    }, 1000);
 
     return () => clearInterval(interval);
   });
