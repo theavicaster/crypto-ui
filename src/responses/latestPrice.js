@@ -662,4 +662,17 @@ export default [
     uuid: 'itpeyyriqoiG2',
     volume: '135479732',
   },
+  {
+    symbol_coin: 'FIL',
+    timestamp: '2020-10-02T15:29:11.000Z',
+    id: '26',
+    market_cap: '375777349',
+    name_coin: 'Ontology',
+    number_of_markets: '144',
+    percent_change_24hr: '-8.94',
+    price: '0.58959231',
+    total_supply: '10.',
+    uuid: 'itpeyyriqoiG2',
+    volume: '135479732',
+  },
 ];
