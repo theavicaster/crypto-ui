@@ -407,12 +407,4 @@ export default [
     harmonic_mean: '0.5896391967959331',
     start_time: '2020-10-02T15:32:00.000Z',
   },
-  {
-    symbol_coin: 'FIL',
-    end_time: '2020-10-02T15:37:00.000Z',
-    arithmetic_mean: '0.5896392136999999',
-    geometric_mean: '0.5896392052476293',
-    harmonic_mean: '0.5896391967959331',
-    start_time: '2020-10-02T15:32:00.000Z',
-  },
 ];
