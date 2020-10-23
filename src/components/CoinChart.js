@@ -191,9 +191,25 @@ const CoinChart = (props) => {
       //   });
       // };
       const getPrice = () => {
-        const data = latestPriceResponse.find(
+        let data = latestPriceResponse.find(
           (coinData) => coinData.symbol_coin === symbol
         );
+  
+        if(!data){
+          data =   {
+            symbol_coin: symbol,
+            timestamp: '2020-10-02T15:29:11.000Z',
+            id: '26',
+            market_cap: '375777349',
+            name_coin: 'Ontology',
+            number_of_markets: '144',
+            percent_change_24hr: '-8.94',
+            price: '0.58959231',
+            total_supply: '10.',
+            uuid: 'itpeyyriqoiG2',
+            volume: '135479732',
+          }
+        }
 
         setCoinPrice({
           price: data.price,
@@ -217,9 +233,20 @@ const CoinChart = (props) => {
       //   });
       // };
       const getAggregate = () => {
-        const data = latestAggregateResponse.find(
+        let data = latestAggregateResponse.find(
           (coinData) => coinData.symbol_coin === symbol
         );
+  
+        if(!data){
+          data = {
+            symbol_coin: symbol,
+            end_time: '2020-10-02T15:37:00.000Z',
+            arithmetic_mean: '0.5896392136999999',
+            geometric_mean: '0.5896392052476293',
+            harmonic_mean: '0.5896391967959331',
+            start_time: '2020-10-02T15:32:00.000Z',
+          }
+        }
 
         setCoinAggregate({
           arithmeticMean: data.arithmetic_mean,
