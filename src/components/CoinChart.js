@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Card, Button, IconButton } from '@material-ui/core';
 import AppsIcon from '@material-ui/icons/Apps';
-import axios from 'axios';
+// import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Chart from 'chart.js';
 import CoinCard from './CoinCard';
@@ -63,7 +63,9 @@ const CoinChart = (props) => {
 
   useEffect(() => {
     const getCoin = async () => {
-      let coin = coinsResponse.data.coins.find((coin) => coin.id == id);
+      let coin = coinsResponse.data.coins.find(
+        (coin) => coin.id === parseInt(id)
+      );
       setCoinData(coin);
     };
 
