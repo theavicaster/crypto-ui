@@ -21,7 +21,6 @@ import CardContentData from './CardContentData';
 import { Link } from 'react-router-dom';
 import latestAggregateResponse from '../responses/latestAggregate';
 import latestPriceResponse from '../responses/latestPrice';
-//import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -89,27 +88,13 @@ const CoinCard = ({
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-    // const getPrice = async () => {
-    //   const { data } = await axios.get(
-    //     `http://localhost:5000/latestPrice/${symbol}`
-    //   );
-
-    //   setCoinPrice({
-    //     price: data.price,
-    //     priceChange: data.percent_change_24hr,
-    //     totalSupply: data.total_supply,
-    //     marketCap: data.market_cap,
-    //     totalVolume: data.volume,
-    //     timestamp: data.timestamp,
-    //   });
-    // };
     const getPrice = () => {
       let data = latestPriceResponse.find(
         (coinData) => coinData.symbol_coin === symbol
       );
 
-      if(!data){
-        data =   {
+      if (!data) {
+        data = {
           symbol_coin: symbol,
           timestamp: '2020-10-02T15:29:11.000Z',
           id: '26',
@@ -121,7 +106,7 @@ const CoinCard = ({
           total_supply: '10.',
           uuid: 'itpeyyriqoiG2',
           volume: '135479732',
-        }
+        };
       }
 
       setCoinPrice({
@@ -134,23 +119,12 @@ const CoinCard = ({
       });
     };
 
-    // const getAggregate = async () => {
-    //   const { data } = await axios.get(
-    //     `http://localhost:5000/latestAggregate/${symbol}`
-    //   );
-
-    //   setCoinAggregate({
-    //     arithmeticMean: data.arithmetic_mean,
-    //     geometricMean: data.geometric_mean,
-    //     harmonicMean: data.harmonic_mean,
-    //   });
-    // };
     const getAggregate = () => {
       let data = latestAggregateResponse.find(
         (coinData) => coinData.symbol_coin === symbol
       );
 
-      if(!data){
+      if (!data) {
         data = {
           symbol_coin: symbol,
           end_time: '2020-10-02T15:37:00.000Z',
@@ -158,7 +132,7 @@ const CoinCard = ({
           geometric_mean: '0.5896392052476293',
           harmonic_mean: '0.5896391967959331',
           start_time: '2020-10-02T15:32:00.000Z',
-        }
+        };
       }
 
       setCoinAggregate({
@@ -174,20 +148,6 @@ const CoinCard = ({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // const getPrice = async () => {
-      //   const { data } = await axios.get(
-      //     `http://localhost:5000/latestPrice/${symbol}`
-      //   );
-
-      //   setCoinPrice({
-      //     price: data.price,
-      //     priceChange: data.percent_change_24hr,
-      //     totalSupply: data.total_supply,
-      //     marketCap: data.market_cap,
-      //     totalVolume: data.volume,
-      //     timestamp: data.timestamp,
-      //   });
-      // };
       const getPrice = () => {
         const data = latestPriceResponse.find(
           (coinData) => coinData.symbol_coin === symbol
@@ -203,16 +163,6 @@ const CoinCard = ({
         });
       };
 
-      // const getAggregate = async () => {
-      //   const { data } = await axios.get(
-      //     `http://localhost:5000/latestAggregate/${symbol}`
-      //   );
-
-      //   setCoinAggregate({
-      //     arithmeticMean: data.arithmetic_mean,
-      //     geometricMean: data.geometric_mean,
-      //     harmonicMean: data.harmonic_mean,
-      //   });
       const getAggregate = () => {
         const data = latestAggregateResponse.find(
           (coinData) => coinData.symbol_coin === symbol

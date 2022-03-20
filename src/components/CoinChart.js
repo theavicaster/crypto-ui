@@ -8,6 +8,7 @@ import Chart from 'chart.js';
 import CoinCard from './CoinCard';
 import latestAggregateResponse from '../responses/latestAggregate';
 import latestPriceResponse from '../responses/latestPrice';
+import coinsResponse from '../responses/coins';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -62,11 +63,8 @@ const CoinChart = (props) => {
 
   useEffect(() => {
     const getCoin = async () => {
-      const data = await axios.get(
-        `https://api.coinranking.com/v1/public/coin/${id}`
-      );
-
-      setCoinData(data.data.data.coin);
+      let coin = coinsResponse.data.coins.find((coin) => coin.id == id);
+      setCoinData(coin);
     };
 
     getCoin();
@@ -194,9 +192,9 @@ const CoinChart = (props) => {
         let data = latestPriceResponse.find(
           (coinData) => coinData.symbol_coin === symbol
         );
-  
-        if(!data){
-          data =   {
+
+        if (!data) {
+          data = {
             symbol_coin: symbol,
             timestamp: '2020-10-02T15:29:11.000Z',
             id: '26',
@@ -208,7 +206,7 @@ const CoinChart = (props) => {
             total_supply: '10.',
             uuid: 'itpeyyriqoiG2',
             volume: '135479732',
-          }
+          };
         }
 
         setCoinPrice({
@@ -236,8 +234,8 @@ const CoinChart = (props) => {
         let data = latestAggregateResponse.find(
           (coinData) => coinData.symbol_coin === symbol
         );
-  
-        if(!data){
+
+        if (!data) {
           data = {
             symbol_coin: symbol,
             end_time: '2020-10-02T15:37:00.000Z',
@@ -245,7 +243,7 @@ const CoinChart = (props) => {
             geometric_mean: '0.5896392052476293',
             harmonic_mean: '0.5896391967959331',
             start_time: '2020-10-02T15:32:00.000Z',
-          }
+          };
         }
 
         setCoinAggregate({

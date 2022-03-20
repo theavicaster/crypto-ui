@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import CoinCard from './CoinCard';
-import axios from 'axios';
+import coinsResponse from '../responses/coins';
+// import axios from 'axios';
 
 const useStyles = makeStyles({
   gridContainer: {
@@ -16,12 +17,7 @@ const CardContainer = () => {
 
   useEffect(() => {
     const getCoins = async () => {
-      const {
-        data: {
-          data: { coins },
-        },
-      } = await axios.get('https://api.coinranking.com/v1/public/coins');
-
+      let coins = coinsResponse.data.coins
       setCoinsData(coins);
     };
 
